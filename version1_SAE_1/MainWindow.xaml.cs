@@ -21,6 +21,7 @@ namespace version1_SAE_1
         {
             InitializeComponent();
         }
+        public static readonly int PAS_CHASSE_NEIGE
         private void Score()
         {
             double score = 0;
@@ -32,6 +33,10 @@ namespace version1_SAE_1
             {
                 label_score.Content = "Stockage : " + score + " / " + stockage;
             } 
+        }
+        private void Vehicule()
+        {
+            double vitesse = 5;
         }
 
     }

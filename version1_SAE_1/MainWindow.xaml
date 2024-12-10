@@ -20,7 +20,6 @@
             Margin="460,395,315,20"
             Source="/Images/essai_chasse_neige.jpg"
             Stretch="Fill" />
-        <Image Margin="452,316,306,66" Source="/Images/th.jpg" Stretch="Fill"/>
 
     </Grid>
 </Window>
