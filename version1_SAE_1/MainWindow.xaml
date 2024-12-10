@@ -18,10 +18,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Stockage : " />
-        <Image x:Name="imgEssaiChasseNeige"
-            Margin="460,395,315,20"
-            Source="/Images/essai_chasse_neige.jpg"
-            Stretch="Fill" />
+        <Image x:Name="imgChasseNeige" Margin="388,360,364,26" Source="/Images/camionHAUT.png" Stretch="Fill"/>
 
 
     </Canvas>
