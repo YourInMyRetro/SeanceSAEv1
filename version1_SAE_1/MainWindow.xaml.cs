@@ -20,7 +20,9 @@ namespace version1_SAE_1
         public MainWindow()
         {
             InitializeComponent();
+            InitBitImage();
         }
+        public static readonly VITESSE_CHASSE_NEIGE = 5;
         private void Score()
         {
             double score = 0;
@@ -40,7 +42,26 @@ namespace version1_SAE_1
         private void InitBitImage()
         {
             chasseNeigeGauche = new BitmapImage(new Uri("pack://application:,,,/img/camionGauche.png"));
+            chasseNeigeDroite = new BitmapImage(new Uri("pack://application:,,,/img/camionDROITE.png"));
+            chasseNeigeHaut = new BitmapImage(new Uri("pack://application:,,,/img/camionHAUT.png"));
+            chasseNeigeBas = new BitmapImage(new Uri("pack://application:,,,/img/camionBAS.png"));
 
+        }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            double decaleGauche = Canvas.GetLeft(imgChasseNeige);
+            if (e.Key == Key.Right && decaleGauche < 735)
+            {
+                imgChasseNeige.Source = chasseNeigeDroite;
+                double newDecaleDroite = decaleGauche + PAS_PERE_NOEL;
+                Canvas.SetLeft(img_Pere_Noel, newDecaleDroite);
+            }
+            if (e.Key == Key.Left && decaleGauche > 1)
+            {
+                img_Pere_Noel.Source = pereNoelGauche;
+                double newDecaleGauche = decaleGauche - PAS_PERE_NOEL;
+                Canvas.SetLeft(img_Pere_Noel, newDecaleGauche);
+            }
         }
 
     }

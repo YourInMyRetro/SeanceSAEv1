@@ -16,7 +16,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Stockage : " />
-        <Image x:Name="imgChasseNeige" Margin="400,359,352,27" Source="/Images/camionHAUT.png" Stretch="Fill"/>
+        <Image x:Name="imgChasseNeige" Margin="388,360,364,26" Source="/Images/camionHAUT.png" Stretch="Fill"/>
 
     </Grid>
 </Window>
