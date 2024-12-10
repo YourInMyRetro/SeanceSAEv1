@@ -21,15 +21,14 @@ namespace version1_SAE_1
         {
             InitializeComponent();
         }
-        public static readonly int PAS_CHASSE_NEIGE
         private void Score()
         {
             double score = 0;
             double stockage = 100;
             bool recolter = false;
-            System.Drawing.Rectangle rImgChasseNeige = new System.Drawing.Rectangle((int)Canvas.GetLeft(imgEssaiChasseNeige), (int)Canvas.GetTop(imgEssaiChasseNeige), (int)imgEssaiChasseNeige.Width, (int)imgEssaiChasseNeige.Height);
+            System.Drawing.Rectangle rImgChasseNeige = new System.Drawing.Rectangle((int)Canvas.GetLeft(imgChasseNeige), (int)Canvas.GetTop(imgChasseNeige), (int)imgChasseNeige.Width, (int)imgChasseNeige.Height);
 
-            if (rImgChasseNeige.IntersectsWith(imgNeige))
+            if (rImgChasseNeige.IntersectsWith(rimgNeige))
             {
                 label_score.Content = "Stockage : " + score + " / " + stockage;
             } 
@@ -37,6 +36,11 @@ namespace version1_SAE_1
         private void Vehicule()
         {
             double vitesse = 5;
+        }
+        private void InitBitImage()
+        {
+            chasseNeigeGauche = new BitmapImage(new Uri("pack://application:,,,/img/camionGauche.png"));
+
         }
 
     }
