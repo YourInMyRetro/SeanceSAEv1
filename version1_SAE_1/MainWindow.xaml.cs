@@ -22,7 +22,11 @@ namespace version1_SAE_1
             InitializeComponent();
             InitBitImage();
         }
-        public static readonly VITESSE_CHASSE_NEIGE = 5;
+        public static readonly int VITESSE_CHASSE_NEIGE = 5;
+        public static BitmapImage chasseNeigeGauche;
+        public static BitmapImage chasseNeigeDroite;
+        public static BitmapImage chasseNeigeHaut;
+        public static BitmapImage chasseNeigeBas;
         private void Score()
         {
             double score = 0;
@@ -50,17 +54,30 @@ namespace version1_SAE_1
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             double decaleGauche = Canvas.GetLeft(imgChasseNeige);
-            if (e.Key == Key.Right && decaleGauche < 735)
+            double decaleHaut = Canvas.GetTop(imgChasseNeige);
+            if (e.Key == Key.Right && decaleGauche < 450)
             {
                 imgChasseNeige.Source = chasseNeigeDroite;
-                double newDecaleDroite = decaleGauche + PAS_PERE_NOEL;
-                Canvas.SetLeft(img_Pere_Noel, newDecaleDroite);
+                double newDecaleDroite = decaleGauche + VITESSE_CHASSE_NEIGE;
+                Canvas.SetLeft(imgChasseNeige, newDecaleDroite);
             }
             if (e.Key == Key.Left && decaleGauche > 1)
             {
-                img_Pere_Noel.Source = pereNoelGauche;
-                double newDecaleGauche = decaleGauche - PAS_PERE_NOEL;
-                Canvas.SetLeft(img_Pere_Noel, newDecaleGauche);
+                imgChasseNeige.Source = chasseNeigeGauche;
+                double newDecaleGauche = decaleGauche - VITESSE_CHASSE_NEIGE;
+                Canvas.SetLeft(imgChasseNeige, newDecaleGauche);
+            }
+            if (e.Key == Key.Up && decaleHaut > 1)
+            {
+                imgChasseNeige.Source = chasseNeigeHaut;
+                double nouvDecaleHaut = decaleHaut + VITESSE_CHASSE_NEIGE;
+                Canvas.SetTop(imgChasseNeige, nouvDecaleHaut);
+            }
+            if (e.Key == Key.Down && decaleHaut < 450)
+            {
+                imgChasseNeige.Source = chasseNeigeBas;
+                double nouvDecaleBas = decaleHaut - VITESSE_CHASSE_NEIGE;
+                Canvas.SetTop(imgChasseNeige, nouvDecaleBas);
             }
         }
 
