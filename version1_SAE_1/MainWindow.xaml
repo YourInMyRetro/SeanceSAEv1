@@ -9,14 +9,17 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid>
-        <Label
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="/Images/map_sans_neige.png"/>
+        </Canvas.Background>
+            <Label
             x:Name="label_score"
             Margin="655,398,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Stockage : " />
-        <Image x:Name="imgChasseNeige" Margin="388,360,364,26" Source="/Images/camionHAUT.png" Stretch="Fill"/>
+        <Image x:Name="imgChasseNeige" Source="/Images/camionHAUT.png" Stretch="Fill" Canvas.Left="427" Height="71" Canvas.Top="316" Width="76"/>
 
-    </Grid>
+    </Canvas>
 </Window>

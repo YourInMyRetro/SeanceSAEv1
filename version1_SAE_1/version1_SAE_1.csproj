@@ -13,6 +13,7 @@
     <None Remove="Images\camionDROITE.png" />
     <None Remove="Images\camionGauche.png" />
     <None Remove="Images\camionHAUT.png" />
+    <None Remove="Images\map_sans_neige.png" />
     <None Remove="Images\th.jpg" />
   </ItemGroup>
 
@@ -27,6 +28,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\camionHAUT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\map_sans_neige.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\th.jpg">
