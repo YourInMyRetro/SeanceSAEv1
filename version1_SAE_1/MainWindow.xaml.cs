@@ -16,9 +16,23 @@ namespace version1_SAE_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
         }
+        private void Score()
+        {
+            double score = 0;
+            double stockage = 100;
+            bool recolter = false;
+            System.Drawing.Rectangle rImgChasseNeige = new System.Drawing.Rectangle((int)Canvas.GetLeft(imgEssaiChasseNeige), (int)Canvas.GetTop(imgEssaiChasseNeige), (int)imgEssaiChasseNeige.Width, (int)imgEssaiChasseNeige.Height);
+
+            if (rImgChasseNeige.IntersectsWith(imgNeige))
+            {
+                label_score.Content = "Stockage : " + score + " / " + stockage;
+            } 
+        }
+
     }
 }
